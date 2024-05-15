@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "NeoDunggeunmoPro";
+    src: url("fonts/NeoDunggeunmoPro-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body, html {
     margin: 0; 
     padding: 0; 
@@ -15,4 +22,29 @@ body, html {
     width: 100vw; /* 뷰포트 너비의 100%로 너비 설정 */
     height: 100vh; /* 뷰포트 높이의 100%로 높이 설정 */ 
     z-index: -1; /* 다른 컨텐츠들이 배경 위에 올라오도록 설정 */
+}
+
+#game-selector {
+    display: none;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40vw;
+    width: 40vw;
+    z-index: 5;
+    color: white;
+    font-size: 2vw;
+    font-family: 'NeoDunggeunmoPro', Arial;
+    background-color: #2F2F2F;
+}
+
+#close-button{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 3vw;
+    margin-top: 2vw;
 }

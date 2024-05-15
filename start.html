@@ -5,6 +5,8 @@
     <title>메인메뉴</title>
     <link rel="stylesheet" href="./css/retro.css">
     <link rel="stylesheet" href="./css/start.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="./script/start.js"></script>
 </head>
 <body>
     <div id="background">
@@ -18,8 +20,8 @@
         <br/>
 
         <div class='wrapper'>  
-            <div role='button' class='retro-btn'>
-                <a class='btn' href="game-main.html"> 
+            <div role='button' class='retro-btn' id="go-game">
+                <a class='btn'> 
                     <span class='btn-inner'>
                         <span class='content-wrapper'>
                             <span class='btn-content'>
@@ -30,7 +32,9 @@
                     </span>
                 </a>
             </div>
+
             <div class="spacer"></div>
+
             <div role='button' class='retro-btn'>
                 <a class='btn' href="settings.html"> 
                     <span class='btn-inner'>
@@ -45,6 +49,44 @@
             </div>
         </div>
 
+        <div id="game-selector">
+            <div id="close-button">
+                <h2>x</h2>
+            </div>
+            <div class='wrapper'>
+                <h2 id="popup-title">< 게임 모드 선택 ></h2>
+
+                <div class="spacer"></div>
+
+                <div role='button' class='retro-btn warning'>
+                    <a class='btn'> 
+                        <span class='btn-inner'>
+                            <span class='content-wrapper'>
+                                <span class='btn-content'>
+                                    <span class='btn-content-inner' label="벽돌 디펜스">
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                
+                <div class="spacer"></div>
+
+                <div role='button' class='retro-btn warning'>
+                    <a class='btn'> 
+                        <span class='btn-inner'>
+                            <span class='content-wrapper'>
+                                <span class='btn-content'>
+                                    <span class='btn-content-inner' label="타임어택">
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
 
     </div>
     <script src="./script/script.js"></script>
