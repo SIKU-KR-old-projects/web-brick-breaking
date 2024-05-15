@@ -230,10 +230,12 @@ LoaderButton.prototype._stop = function( status ) {
       setTimeout( function() {
         classie.remove( self.button, statusClass );
         self._enable();
+        window.location.href = '../story.html';
       }, self.options.statusTime );
     }
     else {
       self._enable();
+      window.location.href = '../story.html';
     }
 
     // remove class state-loading from the button
