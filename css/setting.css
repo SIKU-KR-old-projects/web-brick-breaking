@@ -33,3 +33,8 @@ body, html {
 .setting{
     display: inline-block;
 }
+
+.img_container img{
+    width: 20vw;
+    height: 22vh;
+}
