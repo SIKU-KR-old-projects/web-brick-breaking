@@ -34,7 +34,28 @@ body, html {
     display: inline-block;
 }
 
+.img_container{
+    margin: 0 3vw 0 3vw;
+}
+
 .img_container img{
     width: 20vw;
-    height: 22vh;
+    height: 40vh;
+}
+
+.left{
+    float: left;
+    width: 10vw;
+    height: 20vh;
+    line-height: 20vh;
+    border: 1px solid black;
+    background-color: aliceblue;
+}
+.right{
+    float: right;
+    width: 10vw;
+    height: 20vh;
+    line-height: 20vh;
+    border: 1px solid black;
+    background-color: aliceblue;
 }
