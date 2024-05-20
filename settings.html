@@ -16,9 +16,32 @@
         </div>
 
         <div id="setting-wrapper">
+            <div id="score">
+                <p>최고 점수 : 0점</p>
+            </div>
             <div class="setting">
                 <div class="img_container">
-                    <img id="egg_img">
+                    <div class="setting_element">
+                        <img src="../img/egg1.png" class="hidden selected">
+                        <div class="explain">
+                            <h1>타조알</h1>
+                            <p class="0">0점 이상</p>
+                        </div>
+                    </div>
+                    <div class="setting_element">
+                        <img src="../img/egg2.png" class="hidden alt">
+                        <div class="explain alt">
+                            <h1>계란</h1>
+                            <p class="100">100점 이상</p>
+                        </div>
+                    </div>
+                    <div class="setting_element">
+                        <img src="../img/egg3.png" class="hidden alt">
+                        <div class="explain alt">
+                            <h1>메추리알</h1>
+                            <p class="200">200점 이상</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="left">
                     <h2><</h2>
@@ -29,7 +52,27 @@
             </div>
             <div class="setting">
                 <div class="img_container">
-                    <img id="background_img">
+                    <div class="setting_element">
+                        <img src="../img/background.png" class="hidden selected">
+                        <div class="explain">
+                            <h1>기본 배경</h1>
+                            <p class="0">0점 이상</p>
+                        </div>
+                    </div>
+                    <div class="setting_element">
+                        <img src="../img/background2.png" class="hidden alt">
+                        <div class="explain alt">
+                            <h1>새벽녘</h1>
+                            <p class="100">100점 이상</p>
+                        </div>
+                    </div>
+                    <div class="setting_element">
+                        <img src="../img/background3.png" class="hidden alt">
+                        <div class="explain alt">
+                            <h1>마지막 전투</h1>
+                            <p class="200">200점 이상</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="left">
                     <h2><</h2>
@@ -39,8 +82,29 @@
                 </div>
             </div>
             <div class="setting">
+
                 <div class="img_container">
-                    <img id="music_img" src="./img/eggimg1.webp">
+                    <div class="setting_element">
+                        <img src="../img/music1.png" class="hidden selected">
+                        <div class="explain">
+                            <h1>기본 음악</h1>
+                            <p class="0">0점 이상</p>
+                        </div>
+                    </div>
+                    <div class="setting_element">
+                        <img src="../img/music2.png" class="hidden alt">
+                        <div class="explain alt">
+                            <h1>신나는 음악</h1>
+                            <p class="100">100점 이상</p>
+                        </div>
+                    </div>
+                    <div class="setting_element">
+                        <img src="../img/music3.png" class="hidden alt">
+                        <div class="explain alt">
+                            <h1>긴박한 음악</h1>
+                            <p class="200">200점 이상</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="left">
                     <h2><</h2>
@@ -49,12 +113,13 @@
                     <h2>></h2>
                 </div>
             </div>
-            <div role='button' class='retro-btn' id="save-button">
+            </div>
+            <div id="save_button" role='button' class='retro-btn'>
                 <a class='btn'> 
                     <span class='btn-inner'>
                         <span class='content-wrapper'>
                             <span class='btn-content'>
-                                <span class='btn-content-inner' label='저장하기'>
+                                <span class='btn-content-inner' label='저장하고 돌아가기'>
                                 </span>
                             </span>
                         </span>
@@ -62,7 +127,10 @@
                 </a>
             </div>
         </div>
+
+        <div id="music">
+            <audio src="music1.mp3"></audio>
+        </div>
     </div>
-    <script src="/script/script.js"></script>
 </body>
 </html>

@@ -6,11 +6,12 @@ var animatetime = 750;
 
 $(function(){
     var backgroundCookie = getCookie("background");
-    if (backgroundCookie) {
-        background_index = background_Array.indexOf(backgroundCookie);
-        if (background_index === -1) background_index = 0;
+    console.log(backgroundCookie);
+    if (backgroundCookie != null) {
+        $('#background').css('background-image', 'url(' + backgroundCookie + ')');
+    } else {
+        $('#background').css('background-image', 'url(./img/background.png)');
     }
-    $('#background').css('background-image', 'url(../img/'+background_Array[background_index]+')');
 
     $("#go-game").on("click", function(){
         $("#game-selector").show(animatetime);
