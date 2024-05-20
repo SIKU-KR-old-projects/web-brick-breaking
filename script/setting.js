@@ -13,8 +13,6 @@ $(document).ready(function(){
         var explain = container.find(".explain");
         var score_p = explain.find("p");
         var require_score = score_p.attr("class");
-        console.log(require_score);
-
 
         if(score>=Number(require_score)){
             img.removeClass("hidden");
@@ -46,7 +44,6 @@ $(document).ready(function(){
             var prev_text = explain.eq(index);
             current_text.addClass("alt");
             prev_text.removeClass("alt");
-
         });
         
         right.click(function(){
@@ -68,7 +65,7 @@ $(document).ready(function(){
         });
     });
 
-    $("#save_button").click(save_setting());
+    $("#save_button").click(save_setting);
 });
 
 //환경 변수 읽기
@@ -86,8 +83,6 @@ function img_setting(){
     //음악 속성을 가져와서 이미지 속성 src와 잘 버무려주기
     $("#music_img").attr("src","./img/"+music.attr("src")+".png");
     $("#score p ").text("최고 점수 : "+score+"점");
-
-    
 }
 
 //setting의 역순
@@ -96,11 +91,11 @@ function save_setting(){
     var setting = $(".setting");
     var isTrue = true;
 
-    console.log("테스트");
-
     for(var i=0; i<setting.length; i++){
+        var text = setting.eq(i).find("p");
+        console.log(text.text());
         var require_score = Number(setting.eq(i).find("p").attr("class"));
-
+        console.log(require_score);
         if(require_score>score){
             isTrue=false;
             console.log("테스트");
@@ -115,6 +110,6 @@ function save_setting(){
         //음악 속성을 가져와서 이미지 속성 src와 잘 버무려주기
         //music.attr("src","./img/"+music.attr("src")+".webp");
     }else{
-        alert("점수가 %d점 넘어야합니다.");
+        alert("점수가 %d점 넘어야합니다.", 200);
     }
 }
