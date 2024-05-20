@@ -2,10 +2,18 @@ var egg;//알 이미지
 var background;//배경
 var music;//음악
 var score;//점수
+var background_Array = ["background.png", "background2.png", "background3.png"];
+var background_index = 0;
 
 $(document).ready(function(){
+    var backgroundCookie = getCookie("background");
+    if (backgroundCookie) {
+        background_index = background_Array.indexOf(backgroundCookie);
+        if (background_index === -1) background_index = 0;
+    }
+    $('#background').css('background-image', 'url(../img/'+background_Array[background_index]+')');
+
     read_setting();
-    img_setting();
 
     $(".setting_element").each(function(){
         var container = $(this);
@@ -13,6 +21,8 @@ $(document).ready(function(){
         var explain = container.find(".explain");
         var score_p = explain.find("p");
         var require_score = score_p.attr("class");
+        console.log(require_score);
+
 
         if(score>=Number(require_score)){
             img.removeClass("hidden");
@@ -40,10 +50,13 @@ $(document).ready(function(){
             var prev_img = imgs.eq(index);
             current_img.addClass("alt");
             prev_img.removeClass("alt");
+            prev_img.addClass("selected");
+            current_img.removeClass("selected")
 
             var prev_text = explain.eq(index);
             current_text.addClass("alt");
             prev_text.removeClass("alt");
+
         });
         
         right.click(function(){
@@ -58,6 +71,8 @@ $(document).ready(function(){
             var prev_img = imgs.eq(index);
             current_img.addClass("alt");
             prev_img.removeClass("alt");
+            prev_img.addClass("selected");
+            current_img.removeClass("selected")
 
             var prev_text = explain.eq(index);
             current_text.addClass("alt");
@@ -73,16 +88,7 @@ function read_setting(){
     egg;
     background = $("#background");
     music = $("#music");
-    score=150;
-}
-
-function img_setting(){
-    $("#egg_img").attr("src",egg);
-    //배경 이미지를 불러와서 사진 넣기
-    $("#background_img").attr("src", background.css("background-image").slice(4,background.length-1));
-    //음악 속성을 가져와서 이미지 속성 src와 잘 버무려주기
-    $("#music_img").attr("src","./img/"+music.attr("src")+".png");
-    $("#score p ").text("최고 점수 : "+score+"점");
+    score=0;
 }
 
 //setting의 역순
@@ -91,11 +97,11 @@ function save_setting(){
     var setting = $(".setting");
     var isTrue = true;
 
+    console.log("테스트");
+
     for(var i=0; i<setting.length; i++){
-        var text = setting.eq(i).find("p");
-        console.log(text.text());
         var require_score = Number(setting.eq(i).find("p").attr("class"));
-        console.log(require_score);
+
         if(require_score>score){
             isTrue=false;
             console.log("테스트");
@@ -103,13 +109,36 @@ function save_setting(){
     }
 
     if(isTrue){
-        //egg.attr("src",egg);
-        //배경 이미지를 불러와서 사진 넣기
-        background.css("#background-image", "url(" + "#background_img".setting + ")");
-        console.log(background.css("background-image"));
-        //음악 속성을 가져와서 이미지 속성 src와 잘 버무려주기
-        //music.attr("src","./img/"+music.attr("src")+".webp");
+        var hiddenImgSrcs = $("div .selected").map(function() {
+            return $(this).attr("src");
+        }).get();
+        setCookie("egg", hiddenImgSrcs[0], 1); // expires in 7 days
+        setCookie("background", hiddenImgSrcs[1], 1); // expires in 7 days
+        setCookie("music", hiddenImgSrcs[2], 1); // expires in 7 days
+        window.location.href = "start.html";
+        console.log(hiddenImgSrcs);
     }else{
-        alert("점수가 %d점 넘어야합니다.", 200);
+        alert("점수가 %d점 넘어야합니다.");
     }
+}
+
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
 }
