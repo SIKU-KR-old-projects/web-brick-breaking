@@ -12,26 +12,35 @@ body, html {
 }
 
 #background {
-    background-size: 100% auto;
+    font-family: 'NeoDunggeunmoPro';
+    background-image: url('../img/background.png'); 
+    background-size: 100% auto; /* 가로가 꽉차게 표시 */
     background-position: top;
     background-repeat: no-repeat;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh; 
-    z-index: -1;
+    width: 100vw; /* 뷰포트 너비의 100%로 너비 설정 */
+    height: 100vh; /* 뷰포트 높이의 100%로 높이 설정 */ 
+    z-index: -1; /* 다른 컨텐츠들이 배경 위에 올라오도록 설정 */
+    color: black;
 }
 
 #title {
     font-family: 'NeoDunggeunmoPro';
-    font-size: 4vw;
-    margin: 3vw 0 5vw 0;
-    color: black;
+    margin: 2vh 0;
+}
+
+#score{
+    padding: 1vh 0;
+}
+
+#setting-wrapper{
+    margin: 0 5vw 0 5vw;
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 .setting{
-    color: black;
     font-size: 2vw;
     font-family: 'NeoDunggeunmoPro', Arial;
     display: inline-block;
@@ -40,7 +49,7 @@ body, html {
 }
 
 .img_container{
-    margin: 0 3vw;
+    margin: 0 3vw
 }
 
 .img_container img{
@@ -63,4 +72,13 @@ body, html {
     display: inline-block;
     margin-left: 1vw;
     margin-right: 1vw;
+}
+
+.alt{
+    display: none;
+}
+
+.hidden{
+    opacity: 0.5;
+    color: rgba(0, 0, 0, 0.75);
 }
