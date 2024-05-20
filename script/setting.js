@@ -68,31 +68,7 @@ $(document).ready(function(){
         });
     });
 
-    $("#save_button").click(function(){
-        var setting = $(".setting");
-        var isTrue = true;
-        for(var i=0; i<setting.length; i++){
-            var current_text = setting.eq(i).find("p");
-            var require_score = Number(current_text.attr("class"));
-            
-            console.log(require_score);
-            if(require_score>score){
-                isTrue=false;
-                console.log("아녀아녀유");
-            }
-        }
-    
-        if(isTrue){
-            //egg.attr("src",egg);
-            //배경 이미지를 불러와서 사진 넣기
-            background.css("#background-image", "url(" + "#background_img".setting + ")");
-            console.log(background.css("background-image"));
-            //음악 속성을 가져와서 이미지 속성 src와 잘 버무려주기
-            //music.attr("src","./img/"+music.attr("src")+".webp");
-        }else{
-            alert("점수가 %d점 넘어야합니다.");
-        }
-    });
+    $("#save_button").click(save_setting());
 });
 
 //환경 변수 읽기
@@ -120,12 +96,14 @@ function save_setting(){
     var setting = $(".setting");
     var isTrue = true;
 
+    console.log("테스트");
+
     for(var i=0; i<setting.length; i++){
         var require_score = Number(setting.eq(i).find("p").attr("class"));
 
         if(require_score>score){
             isTrue=false;
-            console.log("아녀아녀유");
+            console.log("테스트");
         }
     }
 
