@@ -9,7 +9,7 @@ var app = express();
 
 // 기본 속성 설정
 app.set('port', process.env.PORT || 8080);
-app.set('host', '127.0.0.1');
+app.set('host', '0.0.0.0');
 
 // static 서버 미들웨어 사용
 app.use(static(__dirname)); // 현재 폴더에 대한 정적 폴더를 설정
