@@ -12,16 +12,15 @@ body, html {
 }
 
 #background {
-    background-image: url('../img/background.png'); 
-    background-size: 100% auto; /* 가로가 꽉차게 표시 */
+    background-size: 100% auto;
     background-position: top;
     background-repeat: no-repeat;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw; /* 뷰포트 너비의 100%로 너비 설정 */
-    height: 100vh; /* 뷰포트 높이의 100%로 높이 설정 */ 
-    z-index: -1; /* 다른 컨텐츠들이 배경 위에 올라오도록 설정 */
+    width: 100vw;
+    height: 100vh; 
+    z-index: -1;
 }
 
 #title {

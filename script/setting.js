@@ -7,23 +7,34 @@ var background_Array = ["background.png", "background2.png", "background3.png"];
 var music_Array = ["music1.webp", "music2.webp", "music3.webp", "music4.webp", "music5.webp"];
 
 $(document).ready(function () {
+    var backgroundCookie = getCookie("background");
+    if (backgroundCookie) {
+        background_index = background_Array.indexOf(backgroundCookie);
+        if (background_index === -1) background_index = 0;
+    }
+    $('#background').css('background-image', 'url(../img/'+background_Array[background_index]+')');
+
     $("#egg_img").attr("src", "./img/" + egg_Array[egg_index]);
     $("#background_img").attr("src", "./img/" + background_Array[background_index]);
 
     $(".left").click(function () {
         var img = $(this).prev().children();
         leftbutton(img);
+    }).on("mouseover", function(){
+        $(this).css("cursor", "pointer");
     });
 
     $(".right").click(function () {
         var img = $(this).prev().prev().children();
         rightbutton(img);
+    }).on("mouseover", function(){
+        $(this).css("cursor", "pointer");
     });
 
     $("#save-button").on("click", function () {
         setCookie("egg", egg_Array[egg_index], cookieExp);
         setCookie("background", background_Array[background_index], cookieExp);
-        logAllCookies();
+        window.location.href = "start.html";  
     });
 });
 
