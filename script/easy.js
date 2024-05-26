@@ -361,10 +361,14 @@ function stopAnimation(){
     clearInterval(out);
     bricks.length = 0;
     balls.length = 0;
+    maxscore = getCookie("maxscore");
+    if(maxscore == null){
+        maxscore = 0;
+    }
     if(coin != 0){
         alert("점수: " + coin);
         if(coin > maxscore){
-            setCookie("maxscore", coin, 1);
+            setCookie("maxscore", coin + maxscore, 1);
             maxscore = coin;
         }
     }
