@@ -13,7 +13,7 @@ body, html {
 
 #background {
     font-family: 'NeoDunggeunmoPro';
-    background-image: url('../img/background.png'); 
+    background-image: url('../img/background1.png'); 
     background-size: 100% auto; /* 가로가 꽉차게 표시 */
     background-position: top;
     background-repeat: no-repeat;
@@ -83,3 +83,10 @@ body, html {
     color: rgba(0, 0, 0, 0.75);
 }
 
+.explain{
+    color: red;
+}
+
+#footer p{
+    font-size: smaller;
+}

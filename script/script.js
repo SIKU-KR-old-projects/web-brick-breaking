@@ -39,34 +39,10 @@ for(var i = 0; i < buttons.length; i++) {
   });
 }
 
-
-//
-// ---Retro Submit Button---
-//
-// var pButton = document.querySelector('.loader-button');
-
-// if (pButton !== null) {
-//   pButton.addEventListener('mousedown', function() {
-//     this.classList.add('btn-active');
-//   });
-//   pButton.addEventListener('mouseup', function() {
-//     this.classList.remove('btn-active');
-//   });
-// } else {
-//   console.error('Loader button not found.');
-// }
-
-
-
-// Classie Helper Functions
-// https://github.com/desandro/classie
-
 function classReg( className ) {
   return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
 }
 
-// classList support for class management
-// altho to be fair, the api sucks because it won't accept multiple classes at once
 var hasClass, addClass, removeClass;
 
 if ( 'classList' in document.documentElement ) {
