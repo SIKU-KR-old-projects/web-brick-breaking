@@ -53,17 +53,17 @@
             <div id="close-button">
                 <h2>x</h2>
             </div>
-            <div class='wrapper'>
+            <div class='popup-wrapper'>
                 <h2 id="popup-title">< 게임 모드 선택 ></h2>
 
                 <div class="spacer"></div>
 
-                <div role='button' class='retro-btn warning'>
+                <div role='button' class='retro-btn warning' id="easy-button">
                     <a class='btn'> 
                         <span class='btn-inner'>
                             <span class='content-wrapper'>
                                 <span class='btn-content'>
-                                    <span class='btn-content-inner' label="벽돌 디펜스">
+                                    <span class='btn-content-inner' label="쉬움">
                                     </span>
                                 </span>
                             </span>
@@ -73,12 +73,27 @@
                 
                 <div class="spacer"></div>
 
-                <div role='button' class='retro-btn warning'>
+                <div role='button' class='retro-btn warning' id="normal-button">
                     <a class='btn'> 
                         <span class='btn-inner'>
                             <span class='content-wrapper'>
                                 <span class='btn-content'>
-                                    <span class='btn-content-inner' label="타임어택">
+                                    <span class='btn-content-inner' label="보통">
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="spacer"></div>
+
+                <div role='button' class='retro-btn warning' id="hard-button">
+                    <a class='btn'> 
+                        <span class='btn-inner'>
+                            <span class='content-wrapper'>
+                                <span class='btn-content'>
+                                    <span class='btn-content-inner' label="어려움">
                                     </span>
                                 </span>
                             </span>
@@ -89,7 +104,7 @@
         </div>
 
     </div>
+    <img id="play-button" src="./img/pause.png"/>
     <script src="./script/script.js"></script>
-
 </body>
 </html>

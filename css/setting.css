@@ -13,11 +13,7 @@ body, html {
 
 #background {
     font-family: 'NeoDunggeunmoPro';
-<<<<<<< HEAD
     background-image: url('../img/background1.png'); 
-=======
-    background-image: url('../img/background.png'); 
->>>>>>> 4731466f650d7760277f93f54b6354948cc5a1dd
     background-size: 100% auto; /* 가로가 꽉차게 표시 */
     background-position: top;
     background-repeat: no-repeat;
@@ -33,10 +29,13 @@ body, html {
 #title {
     font-family: 'NeoDunggeunmoPro';
     margin: 2vh 0;
+    font-size: 2vw;
 }
 
 #score{
     padding: 1vh 0;
+    font-size: 1.5vw;
+
 }
 
 #setting-wrapper{
@@ -48,8 +47,8 @@ body, html {
     font-size: 2vw;
     font-family: 'NeoDunggeunmoPro', Arial;
     display: inline-block;
-    margin-top: 3vw;
-    margin-bottom: 3vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
 }
 
 .img_container{
@@ -85,8 +84,12 @@ body, html {
 .hidden{
     opacity: 0.5;
     color: rgba(0, 0, 0, 0.75);
-<<<<<<< HEAD
 }
-=======
+
+.explain{
+    color: red;
 }
->>>>>>> 4731466f650d7760277f93f54b6354948cc5a1dd
+
+#footer p{
+    font-size: smaller;
+}

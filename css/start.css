@@ -47,3 +47,14 @@ body, html {
     margin-right: 3vw;
     margin-top: 2vw;
 }
+
+#play-button{
+    width: 2.5vw;
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+}
+
+.popup-wrapper {
+    margin-top: 5vw;
+}
