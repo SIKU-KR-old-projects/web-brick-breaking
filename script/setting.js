@@ -170,7 +170,6 @@ function save_setting(){
             return $(this).attr("src");
         }).get();
         var audiosrc = $('audio').attr("src");
-        setCookie("score", score, 1); // expires in 7 days
         setCookie("egg", hiddenImgSrcs[0], 1); // expires in 7 days
         setCookie("background", hiddenImgSrcs[1], 1); // expires in 7 days
         setCookie("music", audiosrc, 1); // expires in 7 days

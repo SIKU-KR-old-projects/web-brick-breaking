@@ -367,10 +367,8 @@ function stopAnimation(){
     }
     if(coin != 0){
         alert("점수: " + coin);
-        if(coin > maxscore){
-            setCookie("maxscore", coin + maxscore, 1);
-            maxscore = coin;
-        }
+        setCookie("maxscore", coin + parseInt(maxscore), 1);
+        maxscore = coin;
     }
     coin = 0;
 }
