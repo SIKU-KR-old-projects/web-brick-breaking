@@ -176,39 +176,55 @@ function brick(x, y, lenX,lenY,life, color,row,col,itemB) {
     };
     var arr = Array.matrix(40,6,0);
     function creatBrick(mode) {
-    var i;
-    var j;
-    var color;
-        for(i=10;i<40;i++)
-    {
-        for(j=0;j<6;j++){
+        var itemcount = 0;
+        var i;
+        var j;
+        var color;
+            for(i=10;i<40;i++)
+        {
+            for(j=0;j<6;j++){
+               
+            var b = Math.floor(Math.random()*(9-mode));
+            if (b==4){
+                var ttt = Math.floor(Math.random()*(mode+1));
+                if(ttt==0){
+                    b=1;
+                }
+            }
+            arr[i][j]=b; //(j,i)위치의 벽돌의 존재 여부
+    
            
-        var b = Math.floor(Math.random()*(9-mode));
-        if (b==4){
-            var ttt = Math.floor(Math.random()*(mode+1));
-            if(ttt==0){
-                b=1;
             }
         }
-        arr[i][j]=b; //(j,i)위치의 벽돌의 존재 여부
-
-       
-        }
-    }
-    for(t=0;t<10;t++)
-    {
-        for(j=0;j<6;j++){
+        for(t=0;t<10;t++)
+        {
+            for(j=0;j<6;j++){
+               
+            var b = 0;
+    
+            arr[t][j]=b; //
+    
            
-        var b = 0;
-
-        arr[t][j]=b; //
-
-       
+            }
+    
         }
-    }
-    console.log(arr);
-    fillbrick(arr,mode);
-    };
+    
+        for(i=39;i>9;i--){
+           for(j=0;j<6;j++){
+            var tdt = arr[i][j];
+            if(tdt==4){
+                itemcount++
+                if(itemcount>8){
+                arr[i][j]=1;
+            }
+            }
+            
+           }
+    
+        }
+        console.log(arr);
+        fillbrick(arr,mode);
+        };
     var fill;
     var count;
     function fillbrick(arr,mode){
