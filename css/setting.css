@@ -29,10 +29,13 @@ body, html {
 #title {
     font-family: 'NeoDunggeunmoPro';
     margin: 2vh 0;
+    font-size: 2vw;
 }
 
 #score{
     padding: 1vh 0;
+    font-size: 1.5vw;
+
 }
 
 #setting-wrapper{
@@ -44,8 +47,8 @@ body, html {
     font-size: 2vw;
     font-family: 'NeoDunggeunmoPro', Arial;
     display: inline-block;
-    margin-top: 3vw;
-    margin-bottom: 3vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
 }
 
 .img_container{
