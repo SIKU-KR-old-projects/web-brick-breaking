@@ -136,7 +136,7 @@ function brick(x, y, lenX,lenY,life, color,row,col,itemB) {
 
          $(document).mousemove(function(e){
             if(o == 0){
-                mousePositionX = e.pageX;
+                mousePositionX = e.pageX-100;
                 mousePositionY = e.pageY;
                 drawbar();
             }
