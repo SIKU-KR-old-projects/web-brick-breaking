@@ -120,7 +120,7 @@ function read_setting(){
 function load_setting(obj){
     //점수 설정
     var score_text=$("#score p");
-    score_text.text("최고점수 : "+score+"점");
+    score_text.text("현재 Coin : "+score);
 
     if(obj==null){
         var current_background=$("#background");
