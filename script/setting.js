@@ -104,13 +104,13 @@ function read_setting(){
     music = getCookie("music");
     score = getCookie("maxscore");
     if(egg==null){
-        egg="img/egg1.png";
+        egg="../img/egg1.png";
     }
     if(background==null){
-        background="img/background1.png";
+        background="../img/background1.png";
     }
     if(music==null){
-        music="music/music1.mp3";
+        music="../music/music1.mp3";
     }
     if(score==null){
         score=0;
@@ -129,7 +129,7 @@ function load_setting(obj){
 
         var current_music=$("#music audio");
         var music_text = music;
-        current_music.attr("src", "music"+music_text.slice(6,music_text.length-3)+"mp3");
+        current_music.attr("src", "../music"+music_text.slice(8,music_text.length-3)+"mp3");
     }else if(obj.attr("id")=="setting_background"){
         //배경 실시간 설정
     var current_background=$("#background");
@@ -140,7 +140,7 @@ function load_setting(obj){
     //음악 실시간 설정
     var current_music=$("#music audio");
     var music_text = $("#setting_music .selected").attr("src");
-    current_music.attr("src", "music"+music_text.slice(6,music_text.length-3)+"mp3");
+    current_music.attr("src", "../music"+music_text.slice(6,music_text.length-3)+"mp3");
     }
 }
 
