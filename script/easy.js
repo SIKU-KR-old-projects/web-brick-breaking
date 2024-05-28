@@ -318,7 +318,6 @@ function checkfin(){
             alert("game clear");
             stopAnimation();
             openWindowWithSize('./normal.html', 1315, 750);
-            window.close();
         }
     }
 };
